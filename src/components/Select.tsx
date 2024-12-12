@@ -9,7 +9,7 @@ export default function Select({ nomelabel, useonchange, name, value }: {
 
     return (
         <label htmlFor={name}>
-            <FormControl className="min-w-max mb-4" fullWidth>
+            <FormControl className="min-w-max" fullWidth>
                 <InputLabel id="demo-simple-select-label">{nomelabel}</InputLabel>
                 <MUISelect
                     name={name}

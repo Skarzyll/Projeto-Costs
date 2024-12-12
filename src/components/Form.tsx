@@ -71,32 +71,38 @@ export default function Form() {
                 theme="light"
             />
             <form onSubmit={handleSubmit} action="/" method="post" className="text-center w-fit">
-                <Input
-                    nomelabel="Nome"
-                    type="text"
-                    name="name"
-                    id="name"
-                    value={name}
-                    useonchange={(e: { target: { value: SetStateAction<string>; }; }) => setname(e.target.value)}
-                    className={"mb-3"}
-                />
+                <div className="mt-3">
+                    <Input
+                        nomelabel="Nome"
+                        type="text"
+                        name="name"
+                        id="name"
+                        value={name}
+                        useonchange={(e: { target: { value: SetStateAction<string>; }; }) => setname(e.target.value)}
+                        className={""}
+                    />
+                </div>
 
-                <Input
-                    nomelabel="Orçamento"
-                    type="number"
-                    name="buy"
-                    id="buy"
-                    value={buy}
-                    useonchange={setbuy}
-                    className={"mb-3"}
-                />
+                <div className="mt-4">
+                    <Input
+                        nomelabel="Orçamento"
+                        type="number"
+                        name="buy"
+                        id="buy"
+                        value={buy}
+                        useonchange={setbuy}
+                        className={""}
+                    />
+                </div>
 
-                <Select
-                    nomelabel={"Opção"}
-                    name="categoria_id"
-                    value={categoria_id}
-                    useonchange={(e: { target: { value: SetStateAction<string>; }; }) => setCategoriaId(e.target.value)}
-                /> <br />
+                <div className="mt-4 mb-3">
+                    <Select
+                        nomelabel={"Opção"}
+                        name="categoria_id"
+                        value={categoria_id}
+                        useonchange={(e: { target: { value: SetStateAction<string>; }; }) => setCategoriaId(e.target.value)}
+                    /> <br />
+                </div>
 
                 <button type="submit" className="bg-zinc-900 text-yellow-500 p-2 disabled:opacity-60 rounded-md hover:shadow-md hover:shadow-black active:scale-90 ease-in-out duration-100 disabled:cursor-not-allowed disabled:pointer-events-none" disabled={!isFormValid} onClick={notify}>Criar projeto</button>
             </form>
