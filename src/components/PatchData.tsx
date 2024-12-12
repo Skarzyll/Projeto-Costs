@@ -113,6 +113,9 @@ export default function PathData() {
                     <span className="flex">
                         <p className="font-bold mr-1">Criado em:</p> {project.createdAt}
                     </span>
+                    {/* <span className="flex"> // por algum motivo nao retorna nada.
+                        <p className="font-bold mr-1">Último update:</p> {project.updateAt}
+                    </span> */}
                 </div>
             ) : (
                 <div className="flex w-full ">
@@ -152,7 +155,7 @@ export default function PathData() {
                             /> <br />
                         </div>
 
-                        <button type="submit" className="text-yellow-500 font-medium p-2 w-20 rounded-md bg-zinc-800 disabled:bg-zinc-500 disabled:text-yellow-300" disabled={!isFormValid} onClick={notify}>Editar</button>
+                        <button type="submit" className="text-yellow-500 font-medium p-2 w-20 rounded-md bg-zinc-800 disabled:bg-zinc-500 disabled:text-yellow-300 active:scale-90 duration-100" disabled={!isFormValid} onClick={notify}>Editar</button>
 
                     </form>
                 </div>
