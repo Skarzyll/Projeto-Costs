@@ -19,7 +19,7 @@ type Project = {
 
 export default function PathData() {
 
-    const { id } = useParams()
+    const { id } = useParams() as { id: string }
     const [project, setProjects] = useState<Project[]>([])
     const [RLoading, setLoading] = useState(true);
     const [showForm, setForm] = useState(false);
@@ -28,7 +28,7 @@ export default function PathData() {
     const [newName, setname] = useState('')
     const [isFormValid, setFormValid] = useState(false);
 
-    const handlePatch = async (e) => {
+    const handlePatch = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const response = await toast.promise(
             fetch(`http://127.0.0.1:9090/projectsedit/${id}`, {
@@ -70,10 +70,14 @@ export default function PathData() {
 
     }, [id]);
 
-    function setnewbuy(e) {
-        const b = Number(e.target.value)
-        if (b > 0) {
-            setbuyid(b)
+    function setnewbuy(e: React.ChangeEvent<HTMLInputElement>) {
+        if(e) {
+            const target = e.target as HTMLInputElement
+            const b = target.value 
+            const c = Number(b)
+            if (c >= 0) {
+                setbuyid(b)
+            }
         }
     }
 

@@ -4,7 +4,7 @@ export default function Select({ nomelabel, useonchange, name, value }: {
     nomelabel: string;
     name: string;
     value: string;
-    //useonchange: (e: React.ChangeEvent<{ value: unknown }>) => void;
+    useonchange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }): JSX.Element {
 
     return (

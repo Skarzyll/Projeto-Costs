@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import Input from "./Input";
 import Select from "./Select";
 import { toast, ToastContainer } from "react-toastify";
@@ -11,7 +11,7 @@ export default function Form() {
     const [name, setname] = useState('')
     const [isFormValid, setFormValid] = useState(false);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const response = await toast.promise(
             fetch('http://127.0.0.1:9090', {
@@ -35,10 +35,14 @@ export default function Form() {
 
     }
 
-    function setbuy(e) {
-        const b = Number(e.target.value)
-        if (b > 0) {
-            setbuyid(b)
+    function setbuy(e: React.ChangeEvent<HTMLInputElement>) {
+        if(e) {
+            const target = e.target as HTMLInputElement
+            const b = target.value 
+            const c = Number(b)
+            if (c >= 0) {
+                setbuyid(b)
+            }
         }
     }
 
@@ -73,7 +77,7 @@ export default function Form() {
                     name="name"
                     id="name"
                     value={name}
-                    useonchange={(e) => setname(e.target.value)}
+                    useonchange={(e: { target: { value: SetStateAction<string>; }; }) => setname(e.target.value)}
                     className={"mb-3"}
                 />
 
@@ -91,7 +95,7 @@ export default function Form() {
                     nomelabel={"Opção"}
                     name="categoria_id"
                     value={categoria_id}
-                    useonchange={(e) => setCategoriaId(e.target.value)}
+                    useonchange={(e: { target: { value: SetStateAction<string>; }; }) => setCategoriaId(e.target.value)}
                 /> <br />
 
                 <button type="submit" className="bg-zinc-900 text-yellow-500 p-2 disabled:opacity-60 rounded-md hover:shadow-md hover:shadow-black active:scale-90 ease-in-out duration-100 disabled:cursor-not-allowed disabled:pointer-events-none" disabled={!isFormValid} onClick={notify}>Criar projeto</button>

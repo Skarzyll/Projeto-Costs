@@ -1,6 +1,16 @@
 import { TextField } from "@mui/material";
 
-export default function Input( {nomelabel, type, name, useonchange, id, value, className} ) {
+interface InputProps {
+    nomelabel: string,
+    type: string,
+    name: string,
+    useonchange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    id: string,
+    value: string,
+    className: string
+}
+
+export default function Input( {nomelabel, type, name, useonchange, id, value, className} : InputProps ) {
     return(
         <>
             <label>
