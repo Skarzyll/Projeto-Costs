@@ -1,10 +1,10 @@
-import { InputLabel, MenuItem, Select as MUISelect, FormControl } from "@mui/material";
+import { InputLabel, MenuItem, Select as MUISelect, FormControl, SelectChangeEvent } from "@mui/material";
 
 export default function Select({ nomelabel, useonchange, name, value }: {
     nomelabel: string;
     name: string;
     value: string;
-    useonchange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+    useonchange: (event: SelectChangeEvent<string>, child: React.ReactNode) => void
 }): JSX.Element {
 
     return (
