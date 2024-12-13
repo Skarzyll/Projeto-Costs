@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CardDeleteButton from "@/components/DeleteData";
-import Project from "@/DB/Server.mjs";
+import Project from "@/api/Server.mjs";
 import Loading from "./Loading";
 import { FaPenToSquare } from 'react-icons/fa6'
 import Link from "next/link";
