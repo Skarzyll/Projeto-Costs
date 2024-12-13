@@ -13,12 +13,6 @@
 	"routes": [
 		{ "src": "/api/(.*)", "dest": "src/api/index.mjs" },
 		{ "src": "/(.*)", "dest": "src/app/page.tsx" },
-		{"rewrites" : [
-			{
-				"source": "/(.*)",
-				"destination": "/"
-			}
-		]}
-	],
 
+	]
 }
