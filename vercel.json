@@ -2,15 +2,17 @@
 	"version": 2,
 	"builds": [
 		{
-			"src": "./src/api/index.mjs",
+			"src": "src/api/index.mjs",
+			"use": "@vercel/node"
+		},
+		{
+			"src": "src/app/page.tsx",
 			"use": "@vercel/node"
 		}
 	],
 	"routes": [
-		{
-			"src": "/(.*)",
-			"dest": "/src/app/page.tsx"
-		}
+		{ "src": "/api/(.*)", "dest": "src/api/index.mjs" },
+		{ "src": "/(.*)", "dest": "src/app/page.tsx" }
 	],
 
 	"rewrites": [

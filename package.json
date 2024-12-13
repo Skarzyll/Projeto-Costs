@@ -6,10 +6,11 @@
     "node": "22.x"
   },
   "type": "module",
+  "main": "src/api/index.mjs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "node api/",
     "lint": "next lint",
     "server": "src/api/index.mjs"
   },

@@ -55,7 +55,7 @@ export default function PathData() {
 
     useEffect(() => {
 
-        fetch(`http://localhost:9090/projectsone/${id}`, {
+        fetch(`https://projeto-costs-plum.vercel.app/projectsone/${id}`, {
             method: 'GET'
         })
             .then(res => res.json())

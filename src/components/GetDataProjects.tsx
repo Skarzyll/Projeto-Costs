@@ -22,7 +22,7 @@ export default function GetDataProject() {
     const [RLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:9090/projects')
+        fetch('https://projeto-costs-plum.vercel.app/projects')
             .then(res => res.json())
             .then(dados => {
                 setProjects(dados)
