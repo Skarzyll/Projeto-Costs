@@ -1,7 +1,7 @@
 import { Sequelize, DataTypes } from 'sequelize'
-//import 'dotenv/config'
+import 'dotenv/config'
 
-const PORT = 3306
+const PORT = process.env.PORT || 3306
 
 const sequelize = new Sequelize('costs', 'root', '', {
     host: '127.0.0.1',
