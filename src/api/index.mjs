@@ -3,6 +3,9 @@ import Project from "./Server.mjs";
 import cors from "cors";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import 'dotenv/config.js'
+
+const PORT = process.env.PORT || 5430
 
 const app = express();
 
@@ -121,4 +124,4 @@ app.patch("/projectsedit/:id", async (req, res) => {
 	}
 });
 
-app.listen(9090, () => console.log("> Server is up and running"));
+app.listen(PORT, () => console.log("> Server is up and running"));

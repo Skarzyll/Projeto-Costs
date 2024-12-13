@@ -9,7 +9,7 @@
   "main": "src/api/index.mjs",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "echo \"Error: no test specified\" && exit 1",
     "start": "node api/",
     "lint": "next lint",
     "server": "src/api/index.mjs"
