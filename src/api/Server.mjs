@@ -1,10 +1,12 @@
 import { Sequelize, DataTypes } from 'sequelize'
 //import 'dotenv/config'
 
+const PORT = 3306
+
 const sequelize = new Sequelize('costs', 'root', '', {
     host: '127.0.0.1',
     dialect: 'mysql',
-    port: '3306'
+    port: PORT
 })
 
 sequelize.authenticate().then(console.log('autenticado'))

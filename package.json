@@ -2,12 +2,15 @@
   "name": "costs",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "nodemon src/api/index.mjs"
+    "server": "src/api/index.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.13.5",
