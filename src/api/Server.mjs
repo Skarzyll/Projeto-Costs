@@ -1,6 +1,7 @@
 import { Sequelize, DataTypes } from 'sequelize'
+//import 'dotenv/config'
 
-const sequelize = new Sequelize('costs', 'root', '26340521', {
+const sequelize = new Sequelize('costs', 'root', '', {
     host: '127.0.0.1',
     dialect: 'mysql',
     port: '3306'

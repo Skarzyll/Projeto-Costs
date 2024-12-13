@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "nodemon src/DB/Routes.mjs"
+    "server": "nodemon src/api/index.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.13.5",
@@ -16,6 +16,7 @@
     "autoprefixer": "^10.4.20",
     "cors": "^2.8.5",
     "date-fns": "^4.1.0",
+    "dotenv": "^16.4.7",
     "express": "^4.21.1",
     "mysql2": "^3.11.4",
     "next": "^15.0.3",
