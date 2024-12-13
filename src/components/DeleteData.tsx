@@ -9,7 +9,7 @@ export default function CardDeleteButton({ id }: { id: string }) {
 
     const handleDelete = async (id: string) => {
         const response = await toast.promise(
-            fetch(`https://projeto-costs-plum.vercel.app/projectsdelete/${id}`, {
+            fetch(`http://localhost:9090/projectsdelete/${id}`, {
                 method: "DELETE",
                 headers: {
                     'Content-type': 'application/json'
