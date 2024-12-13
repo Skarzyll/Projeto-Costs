@@ -1,15 +1,22 @@
 {
 	"version": 2,
 	"builds": [
-        { 
-            "src": "package.json", 
-            "use": "@vercel/node" 
-        }
-    ],
+		{
+			"src": "package.json",
+			"use": "@vercel/node"
+		}
+	],
 	"routes": [
-        { 
-            "src": "/(.*)", 
-            "dest": "/src/app/page.tsx" 
-        }
-    ]
+		{
+			"src": "/(.*)",
+			"dest": "/src/app/page.tsx"
+		}
+	],
+
+	"rewrites": [
+		{
+			"source": "/(.*)",
+			"destination": "/"
+		}
+	]
 }
