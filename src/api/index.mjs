@@ -3,9 +3,9 @@ import Project from "./Server.mjs";
 import cors from "cors";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import 'dotenv/config.js'
+import 'dotenv/config'
 
-const PORT = process.env.PORT || 5430
+const PORT = process.env.PORT || 3000
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.post("/", async (req, res) => {
 			buy: req.body.buy,
 			categoria_id: req.body.categoria_id,
 		});
-
+		res.send('hello')
 		return res.status(201).json();
 	} catch (error) {
 		return res.status(500).json(error);

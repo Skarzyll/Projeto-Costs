@@ -6,7 +6,6 @@ import { FaRegTrashCan } from 'react-icons/fa6';
 
 export default function CardDeleteButton({ id }: { id: string }) {
 
-
     const handleDelete = async (id: string) => {
         const response = await toast.promise(
             fetch(`http://localhost:9090/projectsdelete/${id}`, {
