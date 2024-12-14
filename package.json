@@ -5,7 +5,6 @@
   "engines": {
     "node": "22.x"
   },
-  "type": "module",
   "main": "src/api/index.mjs",
   "scripts": {
     "dev": "next dev",
