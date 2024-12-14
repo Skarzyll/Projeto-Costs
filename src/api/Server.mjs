@@ -2,7 +2,10 @@ import { Sequelize, DataTypes } from 'sequelize'
 
 const sequelize = new Sequelize('costs', 'root', '26340521', {
     host: '0.0.0.0',
-    dialect: 'mysql'
+    dialect: 'mysql',
+    dialectOptions: {
+        socketPath: '/var/run/mysqld/mysqld.sock'
+    }
 })
 
 sequelize.authenticate().then(console.log('autenticado'))
