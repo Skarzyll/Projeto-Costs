@@ -1,10 +1,9 @@
 import { Sequelize, DataTypes } from "sequelize";
 
 const sequelize = new Sequelize("costs", "root", "26340521", {
-	host: "127.0.0.1",
+	host: "localhost",
 	dialect: "mysql",
-	port: 3306,
-	socketPath: "/var/run/mysqld/mysqld.sock",
+	port: '3306'
 });
 
 sequelize.authenticate().then(console.log("autenticado"));
@@ -36,6 +35,6 @@ const Project = sequelize.define("projects", {
 	},
 });
 
-//Project.sync({force: true})
+Project.sync({force: true})
 
 export default Project;
