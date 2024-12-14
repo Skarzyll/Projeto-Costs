@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node src/api/index.mjs",
+    "start": "node ./src/api/index.mjs",
     "lint": "next lint",
     "server": "src/api/index.mjs"
   },
