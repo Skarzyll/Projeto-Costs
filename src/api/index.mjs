@@ -3,9 +3,9 @@ import Project from "./Server.mjs";
 import cors from "cors";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import 'dotenv/config'
+import "dotenv/config";
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -14,6 +14,10 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.get("/", (req, res) => {
+	res.send("hello from simple server :)");
+});
+
 app.post("/", async (req, res) => {
 	try {
 		await Project.create({
@@ -21,7 +25,6 @@ app.post("/", async (req, res) => {
 			buy: req.body.buy,
 			categoria_id: req.body.categoria_id,
 		});
-		res.send('hello')
 		return res.status(201).json();
 	} catch (error) {
 		return res.status(500).json(error);
@@ -32,18 +35,18 @@ app.get("/projects", async (req, res) => {
 	try {
 		const projects = await Project.findAll();
 		const funcform = projects.map((project) => ({
-            id: project.id,
-            name: project.name,
-            buy: project.buy,
-            categoria_id: project.categoria_id,
-            createdAt: format(new Date(project.createdAt), "dd/MM/yyyy HH:mm", {
-                locale: ptBR,
-            }),
-            updatedAt: format(new Date(project.updatedAt), "dd/MM/yyyy HH:mm", {
-                locale: ptBR,
-            }),
-        }));
-        
+			id: project.id,
+			name: project.name,
+			buy: project.buy,
+			categoria_id: project.categoria_id,
+			createdAt: format(new Date(project.createdAt), "dd/MM/yyyy HH:mm", {
+				locale: ptBR,
+			}),
+			updatedAt: format(new Date(project.updatedAt), "dd/MM/yyyy HH:mm", {
+				locale: ptBR,
+			}),
+		}));
+
 		res.json(funcform);
 	} catch (error) {
 		res.status(500).json(error);
@@ -59,18 +62,17 @@ app.get("/projectsone/:id", async (req, res) => {
 		});
 
 		const funcform = project.map((project) => ({
-            id: project.id,
-            name: project.name,
-            buy: project.buy,
-            categoria_id: project.categoria_id,
-            createdAt: format(new Date(project.createdAt), "dd/MM/yyyy HH:mm", {
-                locale: ptBR,
-            }),
-            updatedAt: format(new Date(project.updatedAt), "dd/MM/yyyy HH:mm", {
-                locale: ptBR,
-            }),
-        }));
-        
+			id: project.id,
+			name: project.name,
+			buy: project.buy,
+			categoria_id: project.categoria_id,
+			createdAt: format(new Date(project.createdAt), "dd/MM/yyyy HH:mm", {
+				locale: ptBR,
+			}),
+			updatedAt: format(new Date(project.updatedAt), "dd/MM/yyyy HH:mm", {
+				locale: ptBR,
+			}),
+		}));
 
 		res.json(funcform);
 	} catch (error) {
