@@ -1,7 +1,7 @@
 import { Sequelize, DataTypes } from 'sequelize'
 
 const sequelize = new Sequelize('costs', 'root', '', {
-    host: '127.0.0.1',
+    host: '0.0.0.0',
     dialect: 'mysql',
     port: '3306'
 })
