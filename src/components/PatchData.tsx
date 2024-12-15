@@ -55,7 +55,7 @@ export default function PathData() {
 
     useEffect(() => {
 
-        fetch(`http://localhost:9090/projectsone/${id}`, {
+        fetch(`https://api-costs.onrender.com/projectsone/${id}`, {
             method: 'GET'
         })
             .then(res => res.json())

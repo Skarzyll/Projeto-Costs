@@ -14,7 +14,7 @@ export default function Form() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const response = await toast.promise(
-            fetch('http://127.0.0.1:9090', {
+            fetch('https://api-costs.onrender.com/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
