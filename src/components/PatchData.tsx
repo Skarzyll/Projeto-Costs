@@ -31,7 +31,7 @@ export default function PathData() {
     const handlePatch = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const response = await toast.promise(
-            fetch(`http://0.0.0.0:9090/projectsedit/${id}`, {
+            fetch(`https://api-costs.onrender.com/projectsedit/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
